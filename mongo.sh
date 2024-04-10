@@ -18,6 +18,7 @@ VALIDATE()
         echo -e " $Y $2 $G succefully installed"
     fi
 }
+for mongod in $@
 do
         dnf list installed $mongod
         if [ $1 -ne 0]
