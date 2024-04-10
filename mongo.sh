@@ -12,7 +12,7 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo -e "$R Error $N can't install the package "
+        echo -e "$R $1 Error $N can't install the package "
         exit 1
     else
         echo -e " $Y $2 $G succefully installed"
@@ -26,7 +26,7 @@ else
      echo " you are root user"
 fi
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copied mongo.repo"
 
 dnf install mongodb-org -y &>> $LOGFILE
