@@ -12,22 +12,22 @@ VALIDATE()
 {
     if [ $1 -ne 0 ]
     then
-        echo "$R Error $N can't install the package "
+        echo -e "$R Error $N can't install the package "
         exit 1
     else
-        echo " $Y $2 $G succefully installed"
+        echo -e " $Y $2 $G succefully installed"
     fi
 }
 if [ $ID -ne 0 ]
 then
-    echo "$R Error... $N you are not root user" 
+    echo -e "$R Error... $N you are not root user" 
     exit 1
 else
      echo " you are root user"
 fi
 
-cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>> $LOGFILE
-VALIDATE $? "copied mongodb.repo"
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+VALIDATE $? "copied mongo.repo"
 
 dnf install mongodb-org -y &>> $LOGFILE
 VALIDATE $? "installed mongodb"
