@@ -18,16 +18,6 @@ VALIDATE()
         echo -e " $Y $2 $G succefully installed"
     fi
 }
-for mongod in $@
-do
-        dnf list installed $mongod
-        if [ $1 -ne 0]
-        then 
-            dnf install mongodb-org -y
-            VALIDATE $? "installation of $mongod"
-        else
-            echo -e " $G $mongod  $N is already installed  .... $Y skipping "
-done
 if [ $ID -ne 0 ]
 then
     echo -e "$R Error... $N you are not root user" 
