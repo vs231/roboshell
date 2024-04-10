@@ -26,7 +26,7 @@ do
             VALIDATE $? "installation of $mongod"
         else
             echo -e " $G $mongod  $N is already installed  .... $Y skipping "
-    done
+done
 if [ $ID -ne 0 ]
 then
     echo -e "$R Error... $N you are not root user" 
