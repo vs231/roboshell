@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 TIMEST=$(date +%F-%H-%M-%S)
-LOGFILE=/tmp/$0-TIMEST.log/
+LOGFILE="/tmp/$0-TIMEST.log/"
 
 VALIDATE()
 {
