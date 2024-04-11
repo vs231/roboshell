@@ -9,7 +9,7 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0.$TIMESTAMP.log"
 
 VALIDATE(){
-    if ( $1 -ne 0 )
+    if [ $1 -ne 0 ]
     then 
         echo -e "$R $2 $Y package Error... $N can't be installed"
         exit 1
@@ -18,11 +18,12 @@ VALIDATE(){
     fi
 }
 
-if ( $ID -ne 0 )
+if [ $ID -ne 0 ]
 then
     echo -e "$R ERROR $Y You R not a ROOT USER"
     exit 1
-else echo "You are a $G root user"
+else
+     echo -e "You are a $G root user"
 fi
 
 dnf module disable nodejs -y &>> $LOGFILE
