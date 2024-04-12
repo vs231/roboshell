@@ -52,11 +52,11 @@ VALIDATE $? "zip file"
 
 cd /app 
 
-unzip /tmp/catalogue.zip 
+unzip /tmp/catalogue.zip &>> $LOGFILE
 VALIDATE   $? "unziped the file"
 
 npm install &>> $LOGFILE
-VALIDATE $? -e " $G npm installed "
+VALIDATE $? " npm installed "
 
 cp home/centos/roboshell/catalogue.service  /etc/systemd/system/catalogue.service &>> $LOGFILE
 VALIDATE $? "copied the copied the catalogue"
